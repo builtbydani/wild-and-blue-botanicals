@@ -1,0 +1,314 @@
+/* ======================================
+    Wild & Blue Botanicals Shared Styles
+   ====================================== */
+
+/* COLORS AND FONTS */
+:root {
+    --cream: #F7F3EC;           /* main background */
+    --tan: #EFE8D8;             /* nav bar + divider sections*/
+    --tan-outline: #E2D8C6;     /* thin borders */
+    --forest: #2F4A3A;          /* headings, buttons, top strip */
+    --forest-outline: #4A6654;  /* divider in the footer */
+    --olive: #5E6B4E;           /* small uppercase labels */
+    --purple: #9C3F66;          /* accent */
+    --ink: #33312C;             /* body text */
+    --footer-text: #DCD5C8;     /* footer text */
+    --footer-hover: #EBC3D3;    /* footer hover */
+    --copyright-text: #C9C2B4;  /* copyright text */
+    --leaf-divider: #B8AE99;    /* leaf divider */
+
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Lora", Georgia, serif;
+}
+
+/* BASE */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+img { max-width: 100%; display: block; }
+p { margin: 0; }
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--forest);
+}
+h1 { font-size: clamp(42px, 5vw, 64px); }
+h2 { font-size: clamp(32px, 4vw, 48px); }
+h3 { font-size: 26px; font-weight: 600; }
+
+a { color: var(--forest); }
+a:hover { color: var(--purple); }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--olive);
+}
+
+/* TOP STRIP, HEADER, NAVBAR */
+.top-strip {
+    background: var(--forest);
+    color: var(--cream);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.site-header {
+    background: var(--tan);
+    border-bottom: 1px solid var(--tan-outline);
+}
+.site-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.site-header .logo img {
+    height: 76px;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 32px;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+.main-nav a {
+    text-decoration: none;
+    padding: 14px 0;
+    border-bottom: 2px solid transparent;
+}
+.main-nav a[aria-current="page"] { border-bottom-color: var(--purple); }
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.btn-solid { background: var(--forest); color: var(--cream); }
+.btn-solid:hover { background: var(--purple); color: var(--cream); }
+.btn-outline { border: 1px solid var(--forest); color: var(--forest); }
+.btn-outline:hover { border-color: var(--purple); color: var(--purple); }
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* SECTIONS */
+.section { padding: clamp(56px, 7vw, 96px) 0; }
+.section-alternate {
+    background: var(--tan);
+    border-top: 1px solid var(--tan-outline);
+    border-bottom: 1px solid var(--tan-outline);
+}
+.center-block {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+/* PHOTO HERO */
+.photo-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(64px, 8vw, 112px) 24px;
+    background-color: var(--forest);
+    background-size: cover;
+    background-position: center;
+}
+/* class per page - CHANGE BG PHOTO HERE */
+.hero-home {
+    background-image:
+        linear-gradient(rgba(31, 48, 38, 0.25), rgba(31, 48, 38, 0.25)),
+        url("../images/garden.jpg");
+}
+.hero-wisdom {
+    background-image:
+        linear-gradient(rgba(31, 48, 38, 0.25), rgba(31, 48, 38, 0.25)),
+        url("../images/garden.jpg");
+}
+
+.hero-card {
+    max-width: 760px;
+    background: rgba(247, 243, 236, 0.88);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    padding: clamp(32px, 5vw, 64px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+.hero-logo {
+    width: min(100%, 380px);
+    mix-blend-mode: multiply;
+}
+
+/* LEAF DIVIDER */
+.leaf-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--olive);
+}
+.leaf-divider span {
+    width: 64px;
+    height: 1px;
+    background: var(--leaf-divider);
+}
+
+/* TAGLINE */
+.tagline {
+    padding: 72px 24px;
+    text-align: center;
+}
+.tagline p {
+    margin: 20px auto 0;
+    max-width: 820px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    color: var(--forest);
+}
+
+/* HOME PAGE: PROCESS OUTLINE */
+.section-intro {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 48px;
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 32px;
+}
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.step img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.step-number {
+    font-family: var(--font-display);
+    font-size: 40px;
+    line-height: 1;
+    color: var(--purple);
+}
+
+/* HOME PAGE: CARDS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 24px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px;
+    background: var(--cream);
+    border: 1px solid var(--tan-outline);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--ink);
+}
+.card:hover { color: var(--ink); border-color: var(--olive); }
+.card h3 { font-size: 30px; }
+.card-more {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple);
+}
+
+/* FOOTER */
+.site-footer {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 56px 0 28px;
+}
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+.footer-brand {
+    font-family: var(--font-display);
+    font-size: 30px;
+}
+.footer-tagline,
+.footer-contact { color: var(--footer-text); }
+.footer-tagline { font-style: italic; }
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+}
+.footer-nav a { color: var(--cream); text-decoration: none; }
+.footer-nav a:hover { color: var(--footer-hover); }
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+}
+.copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--forest-outline);
+    font-size: 13px;
+    color: var(--copyright-text);
+}
