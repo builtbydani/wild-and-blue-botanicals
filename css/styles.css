@@ -16,6 +16,8 @@
     --footer-hover: #EBC3D3;    /* footer hover */
     --copyright-text: #C9C2B4;  /* copyright text */
     --leaf-divider: #B8AE99;    /* leaf divider */
+    --pink-soft: #F6E9EE;       /* note box bg */
+    --pink-outline: #D9A9BD;    /* note box border */
 
     --font-display: "Cormorant Garamond", Georgia, serif;
     --font-body: "Lora", Georgia, serif;
@@ -429,4 +431,80 @@ a:hover { color: var(--purple); }
     font-family: var(--font-display);
     font-size: 22px;
     color: var(--forest);
+}
+
+/* INGREDIENTS PAGE */
+.ingredients-intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 48px;
+  align-items: center;
+  padding-top: clamp(48px, 6vw, 80px);
+  padding-bottom: 40px;
+}
+.ingredients-intro .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ingredients-intro img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.note {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px 28px;
+  background: var(--pink-soft);
+  border: 1px solid var(--pink-line);
+  border-radius: 12px;
+}
+.note svg { flex: 0 0 auto; margin-top: 3px; }
+.note strong,
+.warning strong { color: var(--pink); }
+
+.label-note { margin-top: 32px; max-width: 820px; }
+.list-intro { margin-top: 8px; max-width: 760px; }
+
+.ingredient-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  column-gap: 56px;
+}
+.ingredient {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.section-tan .ingredient { border-bottom-color: #D8CDB8; }  /* a bit darker on tan */
+
+.ingredient img {
+  flex: 0 0 96px;          /* never shrink or stretch */
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.ingredient div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;            /* lets long text wrap instead of overflowing */
+}
+.ingredient h3 { font-size: 25px; }
+.ingredient p { font-size: 16px; line-height: 1.7; }
+
+.ingredient .warning {
+  padding: 10px 14px;
+  background: var(--pink-soft);
+  border: 1px solid var(--pink-line);
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
 }
