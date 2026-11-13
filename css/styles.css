@@ -163,12 +163,12 @@ a:hover { color: var(--purple); }
 .hero-home {
     background-image:
         linear-gradient(rgba(31, 48, 38, 0.25), rgba(31, 48, 38, 0.25)),
-        url("../images/garden.jpg");
+        url("../images/DebsGarden2.jpeg");
 }
 .hero-wisdom {
     background-image:
         linear-gradient(rgba(31, 48, 38, 0.25), rgba(31, 48, 38, 0.25)),
-        url("../images/garden.jpg");
+        url("../images/DebsGarden.jpeg");
 }
 
 .hero-card {
